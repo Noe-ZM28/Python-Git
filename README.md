@@ -1,1 +1,1 @@
-#ste es un repositorio para subir un environment virtual
+#este es un repositorio para subir un environment virtual
