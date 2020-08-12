@@ -15,18 +15,16 @@ class UsuarioManager (BaseUserManager):
         usuario.save()
         return usuario
 
-    def create_superuser(self, username, email, roll, password):
+    def create_superuser(self, username, email, roll, password, **kwargs):
         usuario = self.create_superuser(
                             username= username,
                             email= email,
                             roll= roll,
-                            password= password)
+                            password= password, **kwargs)
         
         usuario.usuario_administrador = True
         usuario.save()        
         return usuario()
-
-
 
 class Usuario(AbstractBaseUser): # modelo para agregar usuarios
     username = models.CharField('Nombre de usuario', unique=True, max_length= 30)
@@ -54,4 +52,3 @@ class Usuario(AbstractBaseUser): # modelo para agregar usuarios
     @property
     def is_staff(self):
         return self.usuario_administrador
-    
