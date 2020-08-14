@@ -19,6 +19,10 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('AgregarUsuarios/', include('django.contrib.auth.urls')), 
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    #path('', TemplateView.as_view(template_name='home.html'), name='home'),
+
+    path('', include('AgregarUsuarios.urls'))
+
 ]

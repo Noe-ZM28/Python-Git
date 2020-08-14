@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'AgregarUsuarios',
+
+    'social_django', #para trabajar con Django y Auth0
+    'AgregarUsuarios', #Agregando la app con la que agrego usuarios
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,28 @@ DATABASES = {
 }
 
 
+AUTHENTICATION_BACKENDS = { 
+    'AgregarUsuarios.auth0backend.Auth0',
+    'django.contrib.auth.backends.ModelBackend'
+}
+
+SOCIAL_AUTH_TRAILING_SLASH = False
+SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-zowsb7ki.us.auth0.com' #DOMAIN'
+SOCIAL_AUTH_AUTH0_KEY = 'Jlq0EtJNRV1CKL8zLgy8MH8kW0b1Q3SA'  #'CLIENT_ID'
+SOCIAL_AUTH_AUTH0_SECRET = 'p8CUHHdfcPnls34yWscJXZLFh4V_iOBgsHFW9psZWGfx7ayzn6YQo0TNjhjewj0O'  #'CLIENT_SECRET'
+
+
+#Agregando las variables que requiere auth0 para hacer la autenticacion
+SOCIAL_AUTH_AUTH0_SCOPE = [
+    'openid',
+    'profile',
+    'email']
+
+
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -120,4 +144,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL  =  '/'
+LOGIN_REDIRECT_URL  =  '/' #esto ya no porque se hara con auth0
+
+
+LOGIN_URL = '/login/auth0'
+#LOGIN_REDIRECT_URL = '/dashboard'
+
+
