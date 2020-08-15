@@ -22,7 +22,7 @@ def dashboard(request):
     auth0user = user.social_auth.get(provider='auth0')
     userdata = {
         'user_id': auth0user.uid,
-        'name': user.first_name,
+        #'name': user.first_name,
         'picture': auth0user.extra_data['picture'],
         'email': auth0user.extra_data['email']
     }

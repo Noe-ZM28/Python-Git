@@ -22,6 +22,7 @@ class Auth0(BaseOAuth2):
 
     def get_user_id(self, details, response):
         """Return current user id."""
+
         return details['user_id']
 
     def get_user_details(self, response):
@@ -31,9 +32,9 @@ class Auth0(BaseOAuth2):
         issuer = 'https://' + self.setting('DOMAIN') + '/'
         audience = self.setting('KEY')  # CLIENT_ID
         payload = jwt.decode(id_token, jwks.read(), algorithms=['RS256'], audience=audience, issuer=issuer)
-
+        print(payload)
         return {'username': payload['nickname'],
-                'first_name': payload['name'],
+                #'first_name': payload['name'],
                 'picture': payload['picture'],
                 'user_id': payload['sub'],
                 'email': payload['email']}
