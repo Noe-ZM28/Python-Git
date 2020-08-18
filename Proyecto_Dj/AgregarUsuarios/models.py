@@ -38,8 +38,8 @@ class Usuario(AbstractBaseUser): # modelo para agregar usuarios
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'roll', 'password']
 
-    def __str__(self):
-        return f'{self.username}, {self.email}, {self.roll}'
+    #def __str__(self):
+    #    return f'{self.username}, {self.email}, {self.roll}'
 
     def has_perm(self, perm, obj = None):
         return True

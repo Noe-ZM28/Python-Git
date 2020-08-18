@@ -26,14 +26,15 @@ def load_data(nrows): #Wolo acepta como parametro nrows
 #Mensaje que indica que se estan cargando el dataframe
 data_load_state = st.text('Cargando datos, espere un momento...')
 
-#indicar que se usaran 10mil filas del dataframe
-data = load_data(10000)
-
 #barra de progreso simple
 for i in range(100):
     progreso.text(f' {i +1}% de 100%')
     barra.progress(i +1)
     time.sleep (0.01)
+
+#indicar que se usaran 10mil filas del dataframe
+data = load_data(10000)
+
 
 #Modifica rle mensaje para indicar que se han agregado los datos
 data_load_state.text('¡Datos cargados correctamente!')
@@ -70,18 +71,4 @@ st.subheader(f'Mapa de todas las recogidas en las {hour_to_filter}:00')
 #grafico llos datos filtrados
 st.map(filtered_data)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#st.markdown('<style>{color:#55B1B1}</style>' ,unsafe_allow_html=True)
