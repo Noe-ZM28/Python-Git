@@ -93,18 +93,11 @@ SOCIAL_AUTH_TRAILING_SLASH = False
 SOCIAL_AUTH_AUTH0_DOMAIN = 'dev-zowsb7ki.us.auth0.com' #DOMAIN'
 SOCIAL_AUTH_AUTH0_KEY = 'Jlq0EtJNRV1CKL8zLgy8MH8kW0b1Q3SA'  #'CLIENT_ID'
 SOCIAL_AUTH_AUTH0_SECRET = 'p8CUHHdfcPnls34yWscJXZLFh4V_iOBgsHFW9psZWGfx7ayzn6YQo0TNjhjewj0O'  #'CLIENT_SECRET'
-
-
 #Agregando las variables que requiere auth0 para hacer la autenticacion
 SOCIAL_AUTH_AUTH0_SCOPE = [
     'openid',
     'profile',
     'email']
-
-
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
