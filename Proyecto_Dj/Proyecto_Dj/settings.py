@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'bootstrap4', # Acá
     'social_django', #para trabajar con Django y Auth0
     'AgregarUsuarios', #Agregando la app con la que agrego usuarios
 ]

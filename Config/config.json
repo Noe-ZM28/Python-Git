@@ -1,0 +1,12 @@
+{
+    "alcance": [
+      {
+        "path": "./Log/alcance.json"
+      }
+    ],
+    "wordcloud":[
+      {
+        "location_produccion" : false
+      }
+    ]
+  }
