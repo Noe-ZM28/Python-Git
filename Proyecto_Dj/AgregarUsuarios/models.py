@@ -29,7 +29,7 @@ class Usuario(AbstractBaseUser): # modelo para agregar usuarios
     username = models.CharField('Nombre de usuario', unique=True, max_length= 30)
     email = models.EmailField('Correo electronico', unique=True)
 
-    password = models.CharField(max_length=30)
+    #password = models.CharField(max_length=30)
     usuario_activo = models.BooleanField(default = True)
     usuario_administrador = models.BooleanField(default = False)
     objects = UsuarioManager()
@@ -49,3 +49,6 @@ class Usuario(AbstractBaseUser): # modelo para agregar usuarios
     @property
     def is_staff(self):
         return self.usuario_administrador
+
+
+        
