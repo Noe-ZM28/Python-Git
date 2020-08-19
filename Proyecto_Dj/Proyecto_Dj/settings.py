@@ -84,8 +84,6 @@ DATABASES = {
 }
 
 
-<<<<<<< HEAD
-=======
 AUTHENTICATION_BACKENDS = { 
     'AgregarUsuarios.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend'
@@ -101,7 +99,6 @@ SOCIAL_AUTH_AUTH0_SCOPE = [
     'profile',
     'email']
 
->>>>>>> fix_login
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
